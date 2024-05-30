@@ -3,7 +3,7 @@
 
 using namespace std;
 
-ostream&
+ostream&    //考虑到cout << c1 << endl;所以返回ostream&用于endl
 operator << (ostream& os, const complex& x)
 {
   return os << '(' << real (x) << ',' << imag (x) << ')';
