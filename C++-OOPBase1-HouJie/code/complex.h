@@ -29,7 +29,7 @@ private:
 };
 
 
-inline complex&
+inline complex& //inline本体之外用
 __doapl (complex* ths, const complex& r)
 {
   ths->re += r.re;
@@ -84,10 +84,10 @@ real (const complex& x)
   return x.real ();
 }
 
-inline complex
-operator + (const complex& x, const complex& y)
+inline complex//return by value
+operator + (const complex& x, const complex& y)//全局函数
 {
-  return complex (real (x) + real (y), imag (x) + imag (y));
+  return complex (real (x) + real (y), imag (x) + imag (y));//local
 }
 
 inline complex
